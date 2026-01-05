@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 
 // Check if user is logged in
@@ -153,7 +154,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
                         <input type="date" name="dateOfJoining" required>
                     </div>
                     <button type="submit" class="btn">Add Employee</button>
-                    <button type="button" onclick="location.href='Login.php'" class="btn">Logout</button>
+                    <button type="button" onclick="location.href='logout.php'" class="btn">Logout</button>
                 </form>
             </div>
 
@@ -201,7 +202,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
                         <textarea name="reason" rows="4" required></textarea>
                     </div>
                     <button type="submit" class="btn">Submit Leave Request</button>
-                    <button type="button" onclick="location.href='Login.php'" class="btn">Logout</button>
+                    <button type="button" onclick="location.href='logout.php'" class="btn">Logout</button>
                 </form>
             </div>
 
@@ -268,5 +269,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
         });
     </script>
 </body>
-
 </html>
