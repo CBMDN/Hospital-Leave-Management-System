@@ -1,6 +1,17 @@
 <?php
 session_start();
 
+// Prevent caching
+header("Cache-Control: no-cache, no-store, must-revalidate");
+header("Pragma: no-cache");
+header("Expires: 0");
+
+// If already logged in, redirect to index
+if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
+    header("Location: index.php");
+    exit();
+}
+
 // Database configuration
 $servername = "localhost";
 $username = "root";
