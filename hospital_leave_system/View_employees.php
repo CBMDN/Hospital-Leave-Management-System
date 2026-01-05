@@ -186,9 +186,10 @@ $result = $conn->query($sql);
             <div class="nav-buttons">
                 <button onclick="location.href='index.php'">Back to Dashboard</button>
                 <button onclick="location.href='Manage_employees.php'">Manage Employees</button>
-                <button type="button" onclick="location.href='logout.php'" class="btn">Logout</button>
+                <button onclick="location.href='logout.php'">Logout</button>
             </div>
         </div>
     </div>
 </body>
 </html>
+
