@@ -1,4 +1,18 @@
 <?php
+
+session_start();
+
+// Check if user is logged in
+if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
+    header("Location: login.php");
+    exit();
+}
+
+// Prevent caching
+header("Cache-Control: no-cache, no-store, must-revalidate");
+header("Pragma: no-cache");
+header("Expires: 0");
+
 require_once 'config.php';
 require_once 'functions.php';
 ?>
@@ -262,7 +276,7 @@ require_once 'functions.php';
 
     <a href="index.php" class="btn">⬅ Back to Dashboard</a>
     <a href="View_employees.php" class="btn">⬅ Back to Directory</a>
-    <a href="Login.php" class="btn">Logout</a>
+    <button type="button" onclick="location.href='logout.php'" class="btn">Logout</button>
 </div>
 
 <!-- Employee Edit Modal -->
