@@ -1,4 +1,19 @@
 <?php
+session_start();
+
+// Check if user is logged in
+if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
+    header("Location: login.php");
+    exit();
+}
+
+// Prevent caching
+header("Cache-Control: no-cache, no-store, must-revalidate");
+header("Pragma: no-cache");
+header("Expires: 0");
+
+
+
 // Database configuration
 $servername = "localhost";
 $username = "root"; // replace with your DB username
@@ -171,7 +186,7 @@ $result = $conn->query($sql);
             <div class="nav-buttons">
                 <button onclick="location.href='index.php'">Back to Dashboard</button>
                 <button onclick="location.href='Manage_employees.php'">Manage Employees</button>
-                <button onclick="location.href='Login.php'">Logout</button>
+                <button type="button" onclick="location.href='logout.php'" class="btn">Logout</button>
             </div>
         </div>
     </div>
